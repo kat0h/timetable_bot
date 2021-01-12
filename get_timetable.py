@@ -25,10 +25,11 @@ def get_schedule(filepath: str):
 
 
 if __name__ == "__main__":
-    time_table = get_timetable('./timetable.csv')
-    schedule = get_schedule('./schedule.csv')
-    today = schedule[sys.argv[1]]
-    print("今日{}の時間割は・・・\n".format(sys.argv[1]))
+    time_table = get_timetable(sys.argv[1])
+    schedule = get_schedule(sys.argv[2])
+    date_today = sys.argv[3]
+    today = schedule[date_today]
+    print("今日{}の時間割は・・・\n".format(date_today))
     if today == "特":
         print("今日は特編授業です")
     elif today == "休":
